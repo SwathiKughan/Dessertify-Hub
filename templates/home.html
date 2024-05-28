@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="icon" href="https://media.istockphoto.com/id/1141755000/vector/glazed-vanilla-donut-letter.jpg?s=612x612&w=0&k=20&c=YbJJeo5BnH7D6FHhbPCL0kxLCHXhGEUHZ7vVIa82EFY=">
+    <link rel="stylesheet" href="{% static 'css/style.css' % }">
+    <style>
+      body{background-image: url("https://t3.ftcdn.net/jpg/05/22/91/36/360_F_522913618_IK1ApFVlU3qz1KfbctaQ9v2tjrvQXU5s.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;}
+    table,th,td,tr{text-align: center; column-width: 15cm;}
+        
+    td, th :not(:last-child){border-right: 1px solid black; border-collapse: collapse;
+      padding: 4px;}
+.dropbtn {
+    background-color:rgb(250, 238, 245);
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: palevioletred;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  
+  .search{
+    border-radius: 20px;
+    display: flex ;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .search input{
+    flex: 1;
+    margin-left: 600px;
+    
+}
+  .search button{
+    margin-right: 600px;
+  }
+    </style>
+    <script src="{% static 'js/script.js' % }">
+      function toggleRecipesDropdown() {
+        var dropdown = document.getElementById("myDropdown");
+        dropdown.classList.toggle("show");
+    }
+    
+    
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    
+    function toggleLearnDropdown() {
+        document.getElementById("myDropdown1").classList.toggle("show");
+      }
+    
+    
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+    }
+      
+    document.getElementById("recipeForm").onsubmit = function() {
+      var name = document.getElementById("name").value;
+      if (!name) {
+          alert("Please provide a recipe name.");
+          return false; 
+      }
+      return true; 
+    };    
+    </script>
+    <title>Dessertify.com</title>
+    </head>
+    <body>
+        <header style="background-color: rgb(250, 238, 245);">
+        <img src="https://img.freepik.com/premium-vector/donut-cartoon-dessert-biscuit-bold-font-style-glazed-capital-letters-tempting-flat-design-typography-cookies-chocolate-letters-white-background-pastry-bakery-waffle-isolated-vector-clipart_106317-14147.jpg?w=360" alt="desserts" height="70" width="230" style="float: left;">      
+        <br>&ensp;&emsp;
+        <a href="/about"><button style="background-color:rgb(250, 238, 245);color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;"><b>About Us</b></button></a>
+&emsp;&emsp;
+        <div class="dropdown">
+            <button onclick="toggleRecipesDropdown()" class="dropbtn"><b>Recipes</b></button>
+            <div id="myDropdown" class="dropdown-content">
+
+              <a href="/cookies">Cookies</a>
+              <a href="/Brownies">Brownies</a>
+              <a href="/bread">Bread & Bun</a>
+              <a href="/donuts">Donuts</a>
+              <a href="/cheese">Cheesecakes</a>
+              <a href="/tiramisu">Tiramisu</a>
+            </div>
+          </div>
+          
+          
+          &emsp;&emsp;
+          <div class="dropdown">
+            <button onclick="toggleLearnDropdown()" class="dropbtn"><b>Learn</b></button>
+            <div id="myDropdown1" class="dropdown-content">
+              <a href="https://www.youtube.com/channel/UCGRVq7kI_LCntI05A6-XAtA#:~:text=Dessert%20Corner%20%2D%20Promo%20Video%20%7C%20Dessert%20Recipes%20%2D%20Cake%2C%20Cookies%2C%20Sweets%20&%20More&text=%C2%B7%20Videos%20%C2%B7%20Kids%20Special%20Recipes%20by,Box%20%C2%B7%20Popular%20videos%20%C2%B7%20All%20Dessert">Videos</a>
+              <a href="https://www.sprinklebakes.com/">Blogs</a>
+            </div>
+          </div>
+          
+          &emsp;&emsp;
+          
+          <a href="/add_recipe"><button style="background-color:rgb(250, 238, 245);color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;"><b>Add Recipes</b></button></a>
+    
+
+              
+
+        
+   </header><br><br>
+
+    
+        <marquee>
+            <h3><span style="background-color: palevioletred;">!!Dessert is like a feel-good song, and the best ones make you dance!!Stressed spelled backward is desserts.Coincidence? I think not!!Dessert is like a cloud that melts in your mouth!!Dessert is like a hug that lasts longer!!Donut worry, be happy!!</span></h3>
+        </marquee>
+            <br>
+            <br><br>
+            <img src="https://w0.peakpx.com/wallpaper/651/638/HD-wallpaper-yummy-deserts-cool-food-yummy-entertainment-fun-desserts.jpg" height="700" width="1575">
+            
+<br>
+    <hr>
+    <br>
+    <h2>Contact Details</h2>        
+    <table>
+        <tr>
+        <th style="font-size:x-large;;">Chennai</th>
+        <th style="font-size: x-large;">Banglore</th>
+        <th style="font-size: x-large;">Cochin</th>
+        
+    </tr>
+    <tr>
+        <td style="font-size: large;letter-spacing: 0.1cm;">No.6,2nd floor,<br>Anna Nagar,Chennai.<br>123-456-789</td>
+        <td style="font-size: large;letter-spacing: 0.1cm;">16/29,4th Cross Street,<br>Whitefield,Banglore.<br>345-678-910</td>
+        <td style="font-size: large;letter-spacing: 0.1cm;">No.4,1st cross St,Gandhi Road,<br>Cochin,Kerala.<br>234-567-890</td>
+    </tr>
+    </table>
+    <br><br><h2 style="text-align: center;background-color:teal;color:pink; ">"Savor the magic, surrender to the sweetness"</h2>
+    <br><br>
+    <h5 style="text-align: center;">@CopyrightsCandyBitesSweetShop160601</h5>
+    </body>
+</html>

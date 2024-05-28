@@ -1,0 +1,64 @@
+body{background-image: url("https://t3.ftcdn.net/jpg/05/22/91/36/360_F_522913618_IK1ApFVlU3qz1KfbctaQ9v2tjrvQXU5s.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;}
+    table,th,td,tr{text-align: center; column-width: 15cm;}
+        
+    td, th :not(:last-child){border-right: 1px solid black; border-collapse: collapse;
+      padding: 4px;}
+.dropbtn {
+    background-color:rgb(250, 238, 245);
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: palevioletred;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  
+  .search{
+    border-radius: 20px;
+    display: flex ;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .search input{
+    flex: 1;
+    margin-left: 600px;
+    
+}
+  .search button{
+    margin-right: 600px;
+  }
+

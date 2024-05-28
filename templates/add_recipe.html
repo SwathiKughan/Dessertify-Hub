@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Recipe</title>
+    <link rel="icon" href="https://media.istockphoto.com/id/1141755000/vector/glazed-vanilla-donut-letter.jpg?s=612x612&w=0&k=20&c=YbJJeo5BnH7D6FHhbPCL0kxLCHXhGEUHZ7vVIa82EFY=">
+    <link rel="stylesheet" href="/static/css/form.css">
+    <style>body {
+        background-image: url("https://t3.ftcdn.net/jpg/05/22/91/36/360_F_522913618_IK1ApFVlU3qz1KfbctaQ9v2tjrvQXU5s.jpg");
+        background-size: cover;
+        background-position: center center;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-top: -60px;
+    }
+    
+    form {
+        width: 1200px; 
+        height: 700px;
+        margin: 60px auto 0;
+        padding: 35px;
+        background: rgba(0, 0, 0, 0.4); 
+        border: 3px solid #fff;
+        border-radius: 70px 70px 70px 70px; 
+        color: #000000; 
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    form h2 {
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 0;
+        margin-bottom: 20px; 
+        padding-top: 10px; }
+    
+    
+    input[type="text"],textarea, button {
+        width: calc(100% - 20px); 
+        height: 50px;
+        border-radius: 15px 15px 15px 15px;
+        border: 1px solid #000000;
+        margin-bottom: 15px;
+        background-color: transparent;
+        color: #000000; 
+        padding: 0 10px; 
+    }
+    
+    textarea {
+        height: 100px;
+        padding: 10px; 
+        height: auto; 
+    }
+    
+    input::placeholder, textarea::placeholder {
+        color: black;
+        opacity: 1;
+    }
+    
+    button {
+        display: block;
+        width: auto; 
+        margin: 20px auto; 
+        background: rgb(66, 3, 63);
+        color: #fff;
+        border-radius: 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        height: 40px;
+        line-height: 40px; 
+        border: none; 
+    }
+    
+    </style>
+    <script src="/static/js/form.js"></script>
+    
+</head>
+<body>
+    
+    <form id="recipeForm" action="/add_recipe" method="post">
+        <h2>Add Your Favorite Recipe</h2>
+        <label for="recipe_name">Recipe Name:</label>
+        <input type="text" id="recipe_name" name="recipe_name" required><br><br>
+        
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" rows="5" required></textarea><br><br>
+        
+        <label for="directions">Directions:</label>
+        <textarea id="directions" name="directions" rows="5" required></textarea><br><br>
+        
+        <button type="submit" value="Submit">Submit Recipe</button>
+    </form>
+<script>
+    function toggleRecipesDropdown() {
+        var dropdown = document.getElementById("myDropdown");
+        dropdown.classList.toggle("show");
+    }
+    
+    
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    
+    
+    function toggleLearnDropdown() {
+        document.getElementById("myDropdown1").classList.toggle("show");
+      }
+    
+    
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+    }
+      
+    document.getElementById("recipeForm").onsubmit = function() {
+      var name = document.getElementById("name").value;
+      if (!name) {
+          alert("Please provide a recipe name.");
+          return false; 
+      }
+      return true; 
+    };
+    
+</script>   
+</body>
+</html>
